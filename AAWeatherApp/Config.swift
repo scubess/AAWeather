@@ -12,4 +12,8 @@ public struct OWMSettings {
     static let apiUrl       = "https://api.openweathermap.org/data/\(apiVersion)"
     static let apiKey       = "fad4811f0bb8fdf00e004feb375066c3"
     static let unit         = "metric"
+    
+    // endpoints
+    static let weather     = "/weather"
+    static let forecast    = "/forecast"    
 }
