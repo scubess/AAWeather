@@ -15,6 +15,10 @@ enum ResponseError: Error {
     case invalidURL
 }
 
+typealias OWMCurrentWeatherResponse = (CurrentWeather?, Error?) -> Void
+typealias OWMForecastWeatherResponse = (ForecastWeather?, Error?) -> Void
+
+
 class OWMApiWrapper: ObservableObject {
     public let api_wrapper_version = "1.0.0"
     var apiUrl  :String

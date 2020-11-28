@@ -15,7 +15,8 @@
 		00B549AF2572B9BC008A8026 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B549AD2572B9BC008A8026 /* LaunchScreen.storyboard */; };
 		00B549B82572BA44008A8026 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B549B72572BA44008A8026 /* Config.swift */; };
 		00B549BB2572BC9D008A8026 /* OWMApiWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B549BA2572BC9D008A8026 /* OWMApiWrapper.swift */; };
-		00B549BE2572BCAE008A8026 /* OWMDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B549BD2572BCAE008A8026 /* OWMDataTypes.swift */; };
+		00B549BE2572BCAE008A8026 /* OWMViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B549BD2572BCAE008A8026 /* OWMViewModel.swift */; };
+		00B549C22572C932008A8026 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B549C12572C932008A8026 /* extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		00B549B02572B9BC008A8026 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00B549B72572BA44008A8026 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		00B549BA2572BC9D008A8026 /* OWMApiWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWMApiWrapper.swift; sourceTree = "<group>"; };
-		00B549BD2572BCAE008A8026 /* OWMDataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWMDataTypes.swift; sourceTree = "<group>"; };
+		00B549BD2572BCAE008A8026 /* OWMViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWMViewModel.swift; sourceTree = "<group>"; };
+		00B549C12572C932008A8026 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +69,8 @@
 				00B549A62572B9BA008A8026 /* ViewController.swift */,
 				00B549B72572BA44008A8026 /* Config.swift */,
 				00B549BA2572BC9D008A8026 /* OWMApiWrapper.swift */,
-				00B549BD2572BCAE008A8026 /* OWMDataTypes.swift */,
+				00B549BD2572BCAE008A8026 /* OWMViewModel.swift */,
+				00B549C12572C932008A8026 /* extension.swift */,
 				00B549A82572B9BA008A8026 /* Main.storyboard */,
 				00B549AB2572B9BC008A8026 /* Assets.xcassets */,
 				00B549AD2572B9BC008A8026 /* LaunchScreen.storyboard */,
@@ -147,11 +150,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B549A72572B9BA008A8026 /* ViewController.swift in Sources */,
+				00B549C22572C932008A8026 /* extension.swift in Sources */,
 				00B549B82572BA44008A8026 /* Config.swift in Sources */,
 				00B549A32572B9BA008A8026 /* AppDelegate.swift in Sources */,
 				00B549BB2572BC9D008A8026 /* OWMApiWrapper.swift in Sources */,
 				00B549A52572B9BA008A8026 /* SceneDelegate.swift in Sources */,
-				00B549BE2572BCAE008A8026 /* OWMDataTypes.swift in Sources */,
+				00B549BE2572BCAE008A8026 /* OWMViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
