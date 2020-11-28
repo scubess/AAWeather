@@ -37,7 +37,7 @@ you can manually drag OWMApiWrapper folder into your own project. Use the follow
 Each call takes completion block as the last parameter. This allows swift's trailing closure syntax to be used. The closure parameters contains the results. If there is any problem with any call, it will be indicated by the `error` object. 
 
 
-##Current Weather 
+## Current Weather 
 
 To get current weather data from the API response, please use
 
