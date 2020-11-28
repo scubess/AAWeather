@@ -9,11 +9,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
+    // vars
     @IBOutlet weak var Location: UILabel!
     @IBOutlet weak var Description: UILabel!
     @IBOutlet weak var Temperature: UILabel!
     @IBOutlet weak var MaxTemperature: UILabel!
-    
     @IBOutlet weak var MinTemperature: UILabel!
     @IBOutlet var tableView: UITableView!
     let cellReuseIdentifier = "cell"
@@ -24,15 +24,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set open weather map wrapper
         owmApiWrapper = OWMApiWrapper(apiUrl: OWMSettings.apiUrl, apiKey: OWMSettings.apiKey)
         owmApiWrapper.setLocation(name: "London,uk")
         print("Open Weather Map version: \(owmApiWrapper.api_wrapper_version)")
         
+        // get current weather
         owmApiWrapper.getCurrentWeatherData { (weather, error) in
             self.loadCurrentWeather()
         }
 
-        owmApiWrapper.getForecastWeatherRequest {  (weather, error) in
+        // get forecast weather
+        owmApiWrapper.getForecastWeatherData {  (weather, error) in
             DispatchQueue.main.async {
                 self.forecastWeather = weather?.dailyList
                 self.loadForecastWeather()
@@ -40,6 +43,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    // load current weather
     func loadCurrentWeather() {
         DispatchQueue.main.async {
             self.Location.text = self.owmApiWrapper.currentWeather.name
@@ -50,10 +54,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    // load forecast weather
     func loadForecastWeather() {
         self.tableView.reloadData()
     }
     
+    //MARK: Tableview data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.forecastWeather != nil {
             return self.forecastWeather!.count
@@ -69,6 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         forecast += self.forecastWeather![indexPath.row].mainValue.minTemperature()
         forecast += " "
         forecast += self.forecastWeather![indexPath.row].mainValue.maxTemperature()
+        
         cell.textLabel?.text = forecast
         return cell
     }

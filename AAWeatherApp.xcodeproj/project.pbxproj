@@ -67,16 +67,24 @@
 				00B549A22572B9BA008A8026 /* AppDelegate.swift */,
 				00B549A42572B9BA008A8026 /* SceneDelegate.swift */,
 				00B549A62572B9BA008A8026 /* ViewController.swift */,
-				00B549B72572BA44008A8026 /* Config.swift */,
-				00B549BA2572BC9D008A8026 /* OWMApiWrapper.swift */,
-				00B549BD2572BCAE008A8026 /* OWMViewModel.swift */,
-				00B549C12572C932008A8026 /* extension.swift */,
+				00B549C42572CDBB008A8026 /* OWMApiWrapper */,
 				00B549A82572B9BA008A8026 /* Main.storyboard */,
 				00B549AB2572B9BC008A8026 /* Assets.xcassets */,
 				00B549AD2572B9BC008A8026 /* LaunchScreen.storyboard */,
 				00B549B02572B9BC008A8026 /* Info.plist */,
 			);
 			path = AAWeatherApp;
+			sourceTree = "<group>";
+		};
+		00B549C42572CDBB008A8026 /* OWMApiWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				00B549BA2572BC9D008A8026 /* OWMApiWrapper.swift */,
+				00B549BD2572BCAE008A8026 /* OWMViewModel.swift */,
+				00B549B72572BA44008A8026 /* Config.swift */,
+				00B549C12572C932008A8026 /* extension.swift */,
+			);
+			name = OWMApiWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

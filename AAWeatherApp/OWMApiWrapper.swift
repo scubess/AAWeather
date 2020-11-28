@@ -26,6 +26,12 @@ class OWMApiWrapper: ObservableObject {
     private let decoder = JSONDecoder()
     private var locationName = ""
     
+    // MARK: Constructors
+    public init(apiUrl: String, apiKey:String) {
+        self.apiUrl = apiUrl
+        self.apiKey = apiKey
+    }
+    
     // MARK: accessors
     var currentWeather = CurrentWeather.emptyInit() {
         willSet {
@@ -44,11 +50,6 @@ class OWMApiWrapper: ObservableObject {
             objectWillChange.send()
         }
     }
-    // MARK: Constructors
-    public init(apiUrl: String, apiKey:String) {
-        self.apiUrl = apiUrl
-        self.apiKey = apiKey
-    }
     
     // set location
     public func setLocation(name: String) {
@@ -56,14 +57,14 @@ class OWMApiWrapper: ObservableObject {
     }
     
     // MARK: API Convert Functions
-    func getCurrentWeatherRequest(completion: @escaping OWMCurrentWeatherResponse) {
+    private func getCurrentWeatherRequest(completion: @escaping OWMCurrentWeatherResponse) {
         let params : [String : String] = ["q": locationName, "units": OWMSettings.unit]
         self.performRequest(path: OWMSettings.weather, params: params) { (weather: CurrentWeather?, error) in
             completion(weather, error)
         }
     }
     
-    func getForecastWeatherRequest(completion: @escaping OWMForecastWeatherResponse) {
+    private func getForecastWeatherRequest(completion: @escaping OWMForecastWeatherResponse) {
         let params : [String : String] = ["q": locationName, "units": OWMSettings.unit]
         self.performRequest(path: OWMSettings.forecast, params: params) { (weather: ForecastWeather?, error) in
             completion(weather, error)
@@ -71,7 +72,7 @@ class OWMApiWrapper: ObservableObject {
     }
     
     // Make API request 
-    public func performRequest<T: Codable>(path: String, params: [String:String], completion: @escaping (_ object: T?,_ error: Error?) -> ()) {
+    private func performRequest<T: Codable>(path: String, params: [String:String], completion: @escaping (_ object: T?,_ error: Error?) -> ()) {
     
         // prepare url components
         var urlComponents = URLComponents(string: apiUrl + path)!
@@ -113,7 +114,8 @@ class OWMApiWrapper: ObservableObject {
         }
         task.resume()
     }
-        
+    
+    
     public func getCurrentWeatherData(completion: @escaping OWMCurrentWeatherResponse ) {
         self.getCurrentWeatherRequest { [weak self] currentWeather, error in
             guard let cw = self else { return }
