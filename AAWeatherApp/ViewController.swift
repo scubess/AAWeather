@@ -24,9 +24,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set open weather map wrapper
+        // Intialize open weather map wrapper
         owmApiWrapper = OWMApiWrapper(apiUrl: OWMSettings.apiUrl, apiKey: OWMSettings.apiKey)
+        
         owmApiWrapper.setLocation(name: "London,uk")
+        
         print("Open Weather Map version: \(owmApiWrapper.api_wrapper_version)")
         
         // get current weather
