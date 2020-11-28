@@ -9,9 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var owmApiWrapper : OWMApiWrapper!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        owmApiWrapper = OWMApiWrapper(apiUrl: OWMSettings.apiUrl, apiKey: OWMSettings.apiKey)
+        
     }
 
 
