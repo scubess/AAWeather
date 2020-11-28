@@ -3,14 +3,14 @@
 An app to use open Street map API to display weather forecast for 5 days for selected location
 
 
-##Get started 
+## Get started 
 
 * A valid API key from Openweathermap
 * A Mac running macOS Catalina
 * Xcode 11.3+
 * Swift 4.1+
 
-##Installation
+## Installation
 
 * Clone or download the project to your local machine
 * Open the project in Xcode
@@ -26,7 +26,7 @@ An app to use open Street map API to display weather forecast for 5 days for sel
 	owmApiWrapper.setLocation(name: "London,uk")        
 ```     
 
-#Usage
+# Usage
 
 you can manually drag OWMApiWrapper folder into your own project. Use the following code with in your project with OWM API key to initialize the wrapper:
 
@@ -48,7 +48,7 @@ To get current weather data from the API response, please use
 	}
 ```
 
-##Forecast Weather 
+## Forecast Weather 
 To get current weather data from the API response, please use
 
 ```swift
@@ -58,13 +58,13 @@ To get current weather data from the API response, please use
 	}
 ```
 
-##Features 
+## Features 
 * Portable open Weather map API wrapper 
 * using Swift 4.1+ JSON & Decodable, ObservableObject 
 * Generics to load data
 * OpenWeather Map API Wrapper is fully extendable
 
-##Fixes 
+## Fixes 
 * Very minimal UI to present Data 
 * Not all JSON keys are accessible 
 * Image is not Utilised
@@ -72,6 +72,6 @@ To get current weather data from the API response, please use
 * The whole UI experience can be done with third party tools like snapkit etc,.
 
 
-##technical Debt 
+## technical Debt 
 
 * If the time is not a problem, the API wrapper can be accessed via swift package manager. Also accessible via cocoapods or carthage. There is a high chance to track bugs, fixes in the Wrapper. Also useful to lay roadmap for improvements. 
